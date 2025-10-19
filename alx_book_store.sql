@@ -30,12 +30,12 @@ CREATE TABLE Orders (
     total_amount DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
-CREATE TABLE Order_Items (
+CREATE TABLE Order_Details (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
-    quantity INT NOT NULL,
+    quantity INT DOUBLE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES orders(id),
-    FOREIGN KEY (book_id) REFERENCES books(id)
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );

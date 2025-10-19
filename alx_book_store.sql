@@ -6,7 +6,7 @@ CREATE TABLE Authors (
     bio TEXT,
     birth_date DATE
 );
-CREATE TABLE books (
+CREATE TABLE Books (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
@@ -15,21 +15,21 @@ CREATE TABLE books (
     price DECIMAL(10, 2) NOT NULL,
     stock INT DEFAULT 0
 );
-CREATE TABLE customers (
+CREATE TABLE Customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     phone VARCHAR(15),
     address TEXT
 );
-CREATE TABLE orders (
+CREATE TABLE Orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     total_amount DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customers(id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(id)
 );
-CREATE TABLE order_items (
+CREATE TABLE Order_Items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,

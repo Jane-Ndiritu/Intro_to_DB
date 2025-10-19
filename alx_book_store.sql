@@ -28,7 +28,7 @@ CREATE TABLE Orders (
     email VARCHAR(215) NOT NULL,
     order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     total_amount DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(id)
+    FOREIGN KEY (Customer_id) REFERENCES customer_id
 );
 CREATE TABLE Order_Items (
     id INT AUTO_INCREMENT PRIMARY KEY,

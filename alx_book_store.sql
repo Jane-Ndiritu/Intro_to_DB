@@ -1,5 +1,11 @@
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 USE alx_book_store;
+CREATE TABLE Authors (
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(255) NOT NULL,
+    bio TEXT,
+    birth_date DATE
+);
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,

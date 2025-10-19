@@ -5,3 +5,6 @@ mydb = mysql.connector.connect(
   password="yourpassword",
   database="alx_book_store"
 )
+mycursor = mydb.cursor()
+mycursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
+mycursor.execute("USE alx_book_store")
